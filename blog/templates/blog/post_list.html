@@ -8,16 +8,12 @@
             <h1><a href="">Who am I</a></h1>
         </div>
 
-        <div>
-            <p>published: 14.06.2014, 12:14</p>
-            <h2><a href="">Start of programming</a></h2>
-            <p>It is about explaining i start in the programming world. I will tell the in and outs of my first experience in the programming world.</p>
-        </div>
-
-        <div>
-            <p>published: 14.06.2014, 12:14</p>
-            <h2><a href="">Django Girls event, den Haag</a></h2>
-            <p>It is about the workshop Django Girls. It is an interesting event to learn your programming skills in HTML and python.<br/> I allows you to make your own website, which is pretty cool!</p>
-        </div>
+        {% for post in posts %}
+    <div>
+        <p>published: {{ post.published_date }}</p>
+        <h1><a href="">{{ post.title }}</a></h1>
+        <p>{{ post.text|linebreaks }}</p>
+    </div>
+{% endfor %}
     </body>
 </html>
